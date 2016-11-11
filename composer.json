@@ -1,5 +1,5 @@
 {
-    "name": "platform/support",
+    "name": "ennerperez/platform-support",
     "type": "library",
     "description": "Platform Support for PHP",
     "keywords": ["platform","support"],
