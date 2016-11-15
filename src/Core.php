@@ -8,5 +8,5 @@ namespace Platform\Support;
  */
 class Core
 {
-    const __PLATFORM_VERSION = "3.1.1.0";
+    const __PLATFORM_VERSION = "3.1.2.0";
 }

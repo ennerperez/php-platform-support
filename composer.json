@@ -1,7 +1,7 @@
 {
   "name": "ennerperez/platform-support",
   "type": "library",
-  "version": "3.1.1.0",
+  "version": "3.1.2.0",
   "description": "Platform Support for PHP",
   "keywords": ["platform","support"],
   "homepage": "https://github.com/ennerperez/platform-php-support",
