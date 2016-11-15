@@ -10,28 +10,28 @@ class Encoding
     static function toJSON($data)
     {
         //if (is_array($data)) {
-            return json_encode($data);
+        return json_encode($data);
         //}
     }
 
     static function toXML($data)
     {
         //if (is_array($data)) {
-            return xmlrpc_encode($data);
+        return xmlrpc_encode($data);
         //}
     }
 
     static function toHTML($data)
     {
         //if (is_array($data)) {
-            return Encoding::html_encode($data);
+        return self::html_encode($data);
         //}
     }
 
     static function toPlain($data)
     {
         //if (is_array($data)) {
-            return Encoding::plain_encode($data);
+        return self::plain_encode($data);
         //}
     }
 
@@ -42,15 +42,14 @@ class Encoding
         if (is_array($mixed)) {
             foreach ($mixed as $val) {
                 if (is_array($val)) {
-                    $return = $return . "<ul>" . html_encode($val) . "</ul>";
+                    $return = $return . "<ul>" . self::html_encode($val) . "</ul>";
                 } else {
                     $return = $return . "<li>" . $val . "</li>";
                 }
             }
             return "<ul>" . $return . "</ul>";
-        }
-        else{
-            return "<span>".$mixed ."</span>";
+        } else {
+            return "<span>" . $mixed . "</span>";
         }
 
     }
@@ -58,13 +57,14 @@ class Encoding
     // Encode array into TEXT
     private static function plain_encode($mixed)
     {
+        $return = null;
         if (is_array($mixed)) {
             foreach ($mixed as $val) {
                 if (is_array($val)) {
                     if ($return != null) {
                         $return = $return . ",";
                     }
-                    $return = $return . plain_encode($val);
+                    $return = $return . self::plain_encode($val);
                 } else {
                     if ($return != null) {
                         $return = $return . ",";
@@ -72,8 +72,7 @@ class Encoding
                     $return = $return . $val;
                 }
             }
-        }
-        else{
+        } else {
             $return = $mixed;
         }
         return $return;
